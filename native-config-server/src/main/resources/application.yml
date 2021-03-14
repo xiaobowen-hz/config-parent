@@ -1,0 +1,13 @@
+server:
+  port: 9010  # 配置服务端口
+spring:
+  application:
+    name: native-config-server  # 服务名称
+  profiles:
+    active: native  # 配置文件的获取方式。native代表从本地仓库读取配置文件
+  cloud:
+    config:
+      server:
+        native:
+          # 本地配置文件存放的路径，即resources下面的shared文件夹
+          search-locations: classpath:/shared

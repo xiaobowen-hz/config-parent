@@ -1,0 +1,12 @@
+server:
+  port: 9000  # 配置服务端口
+
+eureka:
+  instance:
+    hostname: config-server # 注册中心服务名
+  client:
+    register-with-eureka: false #此zuul-server不再注册到其他的注册中心
+    fetch-registry: false       #不在从其他中心中心拉取服务器信息
+    service-url:
+      # 配置注册中心服务地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka

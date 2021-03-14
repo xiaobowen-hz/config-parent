@@ -1,0 +1,6 @@
+server:
+  port: 9030  # 配置服务端口
+
+spring:
+  application:
+    name: native-config-server  # 服务名称

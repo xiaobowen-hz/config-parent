@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: configclient  # 本地仓库配置文件名的前半部分
+  profiles:
+    active: dev  # 本地仓库配置文件名的后半部分，【name+active = configclient-dev.yml】
+  cloud:
+    config:
+      uri: http://localhost:9010  # 配置中心的服务访问地址
+      fail-fast: true # 客户端优先判断配置中心的服务是否获取正常
