@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-consumer" />
         <module name="config-server" />
+        <module name="git-config-server" />
         <module name="native-config-server" />
       </profile>
     </annotationProcessing>

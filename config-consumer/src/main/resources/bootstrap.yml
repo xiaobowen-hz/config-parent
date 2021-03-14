@@ -1,9 +1,27 @@
+# 本地仓库配置
+#spring:
+#  application:
+#    name: configclient  # 本地仓库配置文件名的前半部分
+#  profiles:
+#    active: dev  # 本地仓库配置文件名的后半部分，【name+active = configclient-dev.yml】
+#  cloud:
+#    config:
+#      uri: http://localhost:9010  # 配置中心的服务访问地址
+#      fail-fast: true # 客户端优先判断配置中心的服务是否获取正常
+
+eureka:
+  instance:
+    prefer-ip-address: true # 注册服务使用IP的方式
+  client:
+    service-url:
+      # 指定需要注册到哪个注册中心
+      defaultZone: http://localhost:9000/eureka
+# 远程仓库配置
 spring:
-  application:
-    name: configclient  # 本地仓库配置文件名的前半部分
-  profiles:
-    active: dev  # 本地仓库配置文件名的后半部分，【name+active = configclient-dev.yml】
   cloud:
     config:
-      uri: http://localhost:9010  # 配置中心的服务访问地址
-      fail-fast: true # 客户端优先判断配置中心的服务是否获取正常
+      name: configclient-hz   # 配置文件的名称
+      label: master   # 远程仓库项目分支名称
+      discovery:
+        enabled: true   # 开启config服务发现的支持
+        service-id: git-config-server   # 远程配置中心在注册中心的服务名

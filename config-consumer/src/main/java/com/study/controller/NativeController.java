@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("native")  // http://localhost:9020/native/index
+@RequestMapping("native")  // http://localhost:9030/native/index
 public class NativeController {
 
     @Value("${server.port}")    // 从配置文件获取数据

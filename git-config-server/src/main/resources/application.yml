@@ -1,0 +1,23 @@
+server:
+  port: 9040  # 配置服务端口
+spring:
+  application:
+    name: git-config-server  # 服务名称
+  cloud:
+    config:
+      server:
+        git:
+          # 远程仓库地址
+          uri: https://github.com/xiaobowen-hz/config-parent.git
+          search-paths: config    # 配置文件地址
+          username: xiaobowen-hz  # 远程仓库用户名
+          password: GH20201110xbw # 远程仓库用户密码
+      label: master   # 分支项目的名称（master是gitbut默认的主分支）
+
+eureka:
+  instance:
+    prefer-ip-address: true # 注册服务使用IP的方式
+  client:
+    service-url:
+      # 指定需要注册到哪个注册中心
+      defaultZone: http://localhost:9000/eureka

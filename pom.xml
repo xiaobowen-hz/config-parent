@@ -9,6 +9,7 @@
         <module>config-server</module>
         <module>native-config-server</module>
         <module>config-consumer</module>
+        <module>git-config-server</module>
     </modules>
     <!--继承的父依赖-->
     <parent>
